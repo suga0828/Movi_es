@@ -1,0 +1,174 @@
+body {
+	margin: 0;
+	font-family: Arial;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: inherit !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.navbar {
+	justify-content: space-between !important;
+}
+
+.brand-tittle {
+	color: #FD6363;
+}
+
+.dropdown-toggle {
+	background-color: transparent;
+	border: none;
+}
+
+.user-name {
+	display: inline-block;
+}
+
+.user-image {
+	width: 30px;
+	height: auto;
+	display: inline-block;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	grid-template-rows:  1fr;
+	grid-template-areas: 
+	"sidebar movies_list";
+}
+
+.sidebar {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas: 
+	"home"
+	"."
+	"ajustes";
+	text-align: center;
+	background-color: #FD6363
+}
+
+.sidebar .list-group:nth-of-type(1) {
+	grid-area: home;
+	display: grid;
+}
+
+
+
+.sidebar .list-group:last-child {
+	grid-area: ajustes;
+	align-self: end;
+}
+
+.fa {
+	display: block !important;
+}
+
+.sidebar-item {
+	padding: 7px;
+	font-weight: bold;
+}
+
+.movies_list {
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	grid-gap: 20px;
+	padding: 20px;
+}
+
+.tag-tittle {
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+.movie {
+	cursor: pointer;
+	position: relative;
+}
+
+@media screen and (max-width: 768px) {
+	.sidebar {
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-areas: 
+		"home"
+		"."
+		"."
+		"ajustes";
+	}
+
+	.movies_list {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 13px;
+	}
+
+	.movie-review {
+		display: none;
+	}
+
+	.search {
+		display: none;
+
+	}
+}
+
+@media screen and (max-width: 576px) { 
+	.sidebar {
+		grid-template-rows: repeat(9, 1fr);
+		grid-template-areas: 
+		"home"
+		"."
+		"."
+		"."
+		"."
+		"."
+		"."
+		"."
+		"ajustes";
+		padding-top: 15px;
+		align-items: center;
+		grid-gap: auto;
+	}
+
+	.movies_list {
+		grid-template-columns: 1fr;
+		grid-gap: 7px;
+		padding: 0px;
+	}
+
+}
+
+.movie-image {
+	margin: 0;
+}
+
+.movie-image img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.movie-description {
+	background: rgba(253,99,99,.7);
+	position: absolute;
+	bottom: 0;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	padding: 10px;
+	width: 100%;
+}
+		
+.movie-tittle {
+	font-weight: bold;
+}
+
+.movie-review {
+	font-size: 13px;
+}
